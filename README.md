@@ -1,11 +1,16 @@
 ## ubuntu-18.04-jenkins
 Vagrant Box with Ubuntu 18.04 & Jenkins
 
-#### Base image
+### Base image
 Used base image [elegoev/ubuntu-18.04](https://app.vagrantup.com/elegoev/boxes/ubuntu-18.04)
 
-#### Automatic provisioning
+### Automatic provisioning
 The base image is provisioned with bash script [ubuntu-18.04-jenkins.sh](https://github.com/elegoev/vagrant-ubuntu1804-jenkins/blob/master/provisioning/ubuntu-18.04-jenkins.sh)
+
+### Host Access
+| Application          | URL                            |
+|----------------------|--------------------------------|
+| Jenkins              | http://localhost:18080         |
 
 ###  Create Vagrant Box Environment
 #### Provider "virtualbox"
