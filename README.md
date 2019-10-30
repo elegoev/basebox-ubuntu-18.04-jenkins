@@ -12,6 +12,15 @@ The base image is provisioned with bash script [ubuntu-18.04-jenkins.sh](https:/
 |----------------------|--------------------------------|
 | Jenkins              | http://localhost:18080         |
 
+### Configuration
+#### Required Vagrant Plugins
+- vagrant-disksize
+- vagrant-hosts
+- vagrant-secret
+- vagrant-share
+- vagrant-vbguest
+- vagrant-vmware-esxi
+
 ###  Create Vagrant Box Environment
 #### Provider "virtualbox"
 1. Create directory `mkdir "name of directory"`
