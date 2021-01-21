@@ -21,3 +21,4 @@ DATE=`date +%Y%m%d%H%M`
 # set version
 JENKINS_VERSION=$(java -jar /usr/share/jenkins/jenkins.war --version)
 echo "jenkins-$JENKINS_VERSION" > /vagrant/version
+
