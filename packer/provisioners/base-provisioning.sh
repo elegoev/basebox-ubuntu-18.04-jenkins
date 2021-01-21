@@ -1,5 +1,7 @@
 #!/bin/bash
 
+application_file_path="/vagrant/installed-application.md"
+
 # update ubuntu
 sudo apt -y update
 
@@ -19,6 +21,12 @@ sudo apt install -y jenkins
 DATE=`date +%Y%m%d%H%M`
 
 # set version
-JENKINS_VERSION=$(java -jar /usr/share/jenkins/jenkins.war --version)
 echo "jenkins-$JENKINS_VERSION" > /vagrant/version
+
+
+# get jenkins version
+JENKINS_VERSION=$(java -jar /usr/share/jenkins/jenkins.war --version)
+echo "# Installed application   "  > $application_file_path
+echo "***                       " >> $application_file_path
+echo "> jenkins $JENKINS_VERSION" >> $application_file_path
 
