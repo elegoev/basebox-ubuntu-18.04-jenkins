@@ -23,7 +23,6 @@ DATE=`date +%Y%m%d%H%M`
 # set version
 echo "jenkins-$JENKINS_VERSION" > /vagrant/version
 
-
 # get jenkins version
 JENKINS_VERSION=$(java -jar /usr/share/jenkins/jenkins.war --version)
 echo "# Installed application   "  > $application_file_path
