@@ -6,7 +6,16 @@ application_file_path="/vagrant/installed-application.md"
 sudo apt -y update
 
 # install jdk
-sudo apt install -y openjdk-8-jdk
+while :
+do
+  sudo apt install -y openjdk-8-jdk
+  retcode=$?
+  if [ $retcode -eq 0 ]; then
+    break
+  fi
+  echo "sleep 5s ..."
+  sleep 5
+done
 
 # add keys
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
@@ -15,17 +24,22 @@ echo "upgrade os ..."
 sudo apt update
 
 # install Jenkins
-sudo apt install -y jenkins
-
-# create date string
-DATE=`date +%Y%m%d%H%M`
-
-# set version
-echo "jenkins-$JENKINS_VERSION" > /vagrant/version
+while :
+do
+  sudo apt install -y jenkins
+  retcode=$?
+  if [ $retcode -eq 0 ]; then
+    break
+  fi
+  echo "sleep 5s ..."
+  sleep 5
+done
 
 # get jenkins version
+JAVA_VERSION=$(java -version 2>&1 | grep openjdk | awk  '{print $3}' | tr --delete \")
 JENKINS_VERSION=$(java -jar /usr/share/jenkins/jenkins.war --version)
 echo "# Installed application   "  > $application_file_path
 echo "***                       " >> $application_file_path
+echo "> java $JAVA_VERSION" >> $application_file_path
 echo "> jenkins $JENKINS_VERSION" >> $application_file_path
 

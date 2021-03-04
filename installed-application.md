@@ -1,3 +1,4 @@
 # Installed application   
 ***                       
-> jenkins 2.263.2
+> java 1.8.0_282
+> jenkins 2.263.4
